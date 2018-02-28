@@ -32,51 +32,52 @@ void stat_error()
 	exit(1);
 }
 
-int main(int argc, char **argv)
+void dir_lst(t_dna *dna)
 {
-	DIR *dir;
-	struct dirent *ret;
-	struct stat buf;
-
-	// ft_printf("FUCK  %-20s fuck\n", "helloopiou");
+	t_info *tmp;
 
 	if(!(dir = opendir(".")))
 		opendir_error("error\n");
 
-	// int readdir(DIR *dir, struct dirent *entry, struct dirent **result);
-
-	// if(!(ret = readdir(dir)))
-	// 	readdir_error("error\n");
-	// 	printf("\n%s\n", ret->d_name);
-	// if(!(ret = readdir(dir)))
-	// 	readdir_error("error\n");
-	// 	printf("\n%s\n", ret->d_name);
-	// if(!(ret = readdir(dir)))
-	// 	readdir_error("error\n");
-	// 	printf("\n%s\n", ret->d_name);
-
 	while ((ret = readdir(dir)))
 	{
-		printf("\n%s\n", ret->d_name);
-
+		// printf("\n%s\n", ret->d_name);
+		tmp = t_memalloc(sizeof())
 	}
+
+}
+
+int main(int argc, char **argv)
+{
+	DIR		*dir;
+	struct	dirent *ret;
+	struct	stat buf;
+	t_dna	dna;
+
+	// ft_printf("FUCK  %-20s fuck\n", "helloopiou");
+    //
+	// if(!(dir = opendir(".")))
+	// 	opendir_error("error\n");
+
+
+    //
+	// while ((ret = readdir(dir)))
+	// {
+	// 	printf("\n%s\n", ret->d_name);
+    //
+	// }
 
 	// printf("%d\n", stat("Makefile", &buf));
 	// printf("%d\n", errno);
-
-	if (stat("./Makefile", &buf))
-		stat_error();
-	ft_printf("%d\n", buf.st_size);
-	ft_printf("%d\n", buf.st_atime);
-	char *toto = ctime(&buf.st_atime);
-
-	ft_printf("  %s   \n", toto);
+    //
+	// if (stat("./Makefile", &buf))
+	// 	stat_error();
+	// ft_printf("%d\n", buf.st_size);
+	// ft_printf("%d\n", buf.st_atime);
+	// char *toto = ctime(&buf.st_atime);
+    //
+	// ft_printf("  %s   \n", toto);
 	// ft_printf("%d\n", buf->st_size);
-
-
-
-	// printf("%d\n", dir->__dd_fd);
-	// printf("\n%c\n", ret->d_type);
 
 
 	return(0);

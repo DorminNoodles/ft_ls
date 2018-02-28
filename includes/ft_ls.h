@@ -18,4 +18,19 @@
 #include "libft.h"
 
 
+typedef struct s_info
+{
+	char	name[255];
+	int		atime;
+	int		mtime;
+	int		ctime;
+	int		blksize;
+} t_info;
+
+typedef struct	s_dna
+{
+	t_info	*dir_lst;
+} t_dna;
+
+
 int				ft_printf(const char *format, ...);
