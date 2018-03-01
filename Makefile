@@ -1,6 +1,7 @@
 NAME = ft_ls
 CC = clang
-SRC = main.c
+SRC =	main.c				\
+		sort.c
 
 SRCS = $(addprefix srcs/, $(SRC))
 OBJ = $(SRC:.c=.o)
@@ -12,6 +13,7 @@ all : $(NAME)
 
 $(NAME) : obj_folder $(OBJS)
 	make -C libft/
+	make -C ft_printf/
 	$(CC) -g $(OBJS) $(INC) libft/libft.a ft_printf/libftprintf.a -o $(NAME)
 
 obj/%.o : srcs/%.c
