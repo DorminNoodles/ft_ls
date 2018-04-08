@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/27 22:37:48 by lchety            #+#    #+#             */
-/*   Updated: 2018/03/01 13:39:52 by lchety           ###   ########.fr       */
+/*   Updated: 2018/04/08 18:41:54 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@
 #define LONG_FORMAT 1
 #define REVERSE 2
 #define HIDDEN 4
-#define RECURSIVE 6
+#define RECURSIVE 8
+#define TRI_DATE 16
 
 typedef struct s_info
 {
@@ -41,5 +42,9 @@ typedef struct	s_dna
 } t_dna;
 
 
-int				ft_printf(const char *format, ...);
-void lst_sort_ascii(t_dna *dna);
+int			ft_printf(const char *format, ...);
+void		lst_sort_ascii(t_dna *dna);
+void 		parsing(t_dna *dna, int argc, char **argv);
+void 		display(t_dna *dna);
+void 		error(char *str);
+void 		display_lst_dir(t_info *lst);

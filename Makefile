@@ -1,7 +1,10 @@
 NAME = ft_ls
 CC = clang
 SRC =	main.c				\
-		sort.c
+		sort.c				\
+		parsing.c			\
+		display.c			\
+		error.c
 
 SRCS = $(addprefix srcs/, $(SRC))
 OBJ = $(SRC:.c=.o)
