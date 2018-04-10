@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/27 22:14:06 by lchety            #+#    #+#             */
-/*   Updated: 2018/04/08 20:06:23 by lchety           ###   ########.fr       */
+/*   Updated: 2018/04/10 20:50:26 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,27 +41,32 @@ void open_recursive(t_dna *dna, t_info *info_lst, char *path)
 	DIR		*dir;
 
 	path = ft_strjoin(path, "/");
-	// printf("%s\n", path);
 	while (info_lst)
 	{
+		// printf(">>>>> %s          \n", info_lst->name);
 		//prendre l ancien path et le nouveau nom pour les join
-		new_path = ft_strjoin(path, info_lst->name);
+		if (ft_strcmp(info_lst->name, ".") && ft_strcmp(info_lst->name, ".."))
+		{
+			// printf(">>>>> %s          \n", info_lst->name);
+			new_path = ft_strjoin(path, info_lst->name);
 
-		printf("new_path %s\n", new_path);
-		// if ((dir = opendir(path)))
-		// {
-		// 	printf("dir => %p\n", dir);
-		// 	printf("OPEN DIR @@@@\n");
-		// }
-		if (stat(new_path, &buf) == -1)
-			error("stat");
+			// printf("new_path %s\n", new_path);
+			// if ((dir = opendir(new_path)))
+			// {
+				// printf("%s    C EST UN DIR\n", new_path);
+				// printf("OPEN DIR @@@@\n");
+				// dir_lst(dna, new_path);
+			// }
+			if (stat(new_path, &buf) == -1)
+				error("stat");
 
-	 	if ((buf.st_mode & S_IFMT) == S_IFDIR)
-			printf("fuck");
-
-		// ft_printf("Pute >>> %d\n", buf.st_blksize);
-
-
+		 	if ((buf.st_mode & S_IFMT) == S_IFDIR)
+			{
+				ft_printf("%s\n", new_path);
+				dir_lst(dna, new_path);
+			}
+				// printf("dossier\n");
+		}
 		info_lst = info_lst->next;
 	}
 }
@@ -92,12 +97,13 @@ void dir_lst(t_dna *dna, char *path)
 
 		add_new_link(&info_lst, tmp);
 	}
+	display_lst_dir(info_lst);
+
 	if (dna->options & RECURSIVE)
 	{
-		// printf("%s\n", "fuck22222222");
+		ft_printf("\n");
 		open_recursive(dna, info_lst, path);
 	}
-	display_lst_dir(info_lst);
 }
 
 
