@@ -4,7 +4,8 @@ SRC =	main.c				\
 		sort.c				\
 		parsing.c			\
 		display.c			\
-		error.c
+		error.c				\
+		hidden.c
 
 SRCS = $(addprefix srcs/, $(SRC))
 OBJ = $(SRC:.c=.o)

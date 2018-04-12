@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/27 22:14:06 by lchety            #+#    #+#             */
-/*   Updated: 2018/04/10 20:50:26 by lchety           ###   ########.fr       */
+/*   Updated: 2018/04/12 10:55:07 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,9 @@ void open_recursive(t_dna *dna, t_info *info_lst, char *path)
 	path = ft_strjoin(path, "/");
 	while (info_lst)
 	{
-		// printf(">>>>> %s          \n", info_lst->name);
-		//prendre l ancien path et le nouveau nom pour les join
 		if (ft_strcmp(info_lst->name, ".") && ft_strcmp(info_lst->name, ".."))
 		{
-			// printf(">>>>> %s          \n", info_lst->name);
+			//prendre l ancien path et le nouveau nom pour les join
 			new_path = ft_strjoin(path, info_lst->name);
 
 			// printf("new_path %s\n", new_path);
@@ -97,7 +95,9 @@ void dir_lst(t_dna *dna, char *path)
 
 		add_new_link(&info_lst, tmp);
 	}
-	display_lst_dir(info_lst);
+	lst = lst_sort_ascii(tmp);
+
+	display_lst_dir(dna, info_lst);
 
 	if (dna->options & RECURSIVE)
 	{
@@ -120,6 +120,7 @@ int main(int argc, char **argv)
 	struct	dirent *ret;
 	struct	stat buf;
 	t_dna	dna;
+	// printf(">>>>>>>>>>>>> %d\n", ft_strcmp("boite", "Boite"));
 
 	init_dna(&dna);
 	parsing(&dna, argc, argv);

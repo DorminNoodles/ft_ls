@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/27 22:37:48 by lchety            #+#    #+#             */
-/*   Updated: 2018/04/10 17:15:28 by lchety           ###   ########.fr       */
+/*   Updated: 2018/04/12 09:10:18 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,10 @@ typedef struct	s_dna
 
 
 int			ft_printf(const char *format, ...);
-void		lst_sort_ascii(t_dna *dna);
+t_info		*lst_sort_ascii(t_info *lst);
 void 		parsing(t_dna *dna, int argc, char **argv);
 void 		display(t_dna *dna);
 void 		error(char *str);
-void 		display_lst_dir(t_info *lst);
+void		display_lst_dir(t_dna *dna, t_info *lst);
 void		dir_lst(t_dna *dna, char *path);
+int			isHidden(char *str);
