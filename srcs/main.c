@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/27 22:14:06 by lchety            #+#    #+#             */
-/*   Updated: 2018/04/13 14:34:06 by lchety           ###   ########.fr       */
+/*   Updated: 2018/04/13 19:04:04 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,13 +79,8 @@ void dir_lst(t_dna *dna, char *path)
 	{
 		if (!(tmp = ft_memalloc(sizeof(t_info))))
 			error("malloc");
-		//save premier maillon
-		// if (stat(path, &buf))
-		// 	error("stat");
-
 		ft_strcpy(tmp->name, ret->d_name);
 		// info->protection = buf.st_mode;
-
 		add_new_link(&info_lst, tmp);
 	}
 	info_lst = lst_sort_ascii(info_lst);
@@ -103,6 +98,7 @@ void dir_lst(t_dna *dna, char *path)
 void init_dna(t_dna *dna)
 {
 	dna->dir_lst = NULL;
+	dna->dir_lst_params = NULL;
 
 }
 

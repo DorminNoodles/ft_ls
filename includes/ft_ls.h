@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/27 22:37:48 by lchety            #+#    #+#             */
-/*   Updated: 2018/04/12 09:10:18 by lchety           ###   ########.fr       */
+/*   Updated: 2018/04/13 18:57:33 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@
 #define RECURSIVE 8
 #define TRI_DATE 16
 
+#define STRING_OPT "-1acdilqrtuCFR"
+
 typedef struct s_info
 {
 	char			name[255];
@@ -38,7 +40,9 @@ typedef struct s_info
 typedef struct	s_dna
 {
 	t_info	*dir_lst;
+	t_info	*dir_lst_params;
 	int		options;
+	int
 } t_dna;
 
 
