@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/27 22:14:06 by lchety            #+#    #+#             */
-/*   Updated: 2018/04/12 10:55:07 by lchety           ###   ########.fr       */
+/*   Updated: 2018/04/13 14:34:06 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,6 @@ void open_recursive(t_dna *dna, t_info *info_lst, char *path)
 			//prendre l ancien path et le nouveau nom pour les join
 			new_path = ft_strjoin(path, info_lst->name);
 
-			// printf("new_path %s\n", new_path);
-			// if ((dir = opendir(new_path)))
-			// {
-				// printf("%s    C EST UN DIR\n", new_path);
-				// printf("OPEN DIR @@@@\n");
-				// dir_lst(dna, new_path);
-			// }
 			if (stat(new_path, &buf) == -1)
 				error("stat");
 
@@ -95,7 +88,7 @@ void dir_lst(t_dna *dna, char *path)
 
 		add_new_link(&info_lst, tmp);
 	}
-	lst = lst_sort_ascii(tmp);
+	info_lst = lst_sort_ascii(info_lst);
 
 	display_lst_dir(dna, info_lst);
 

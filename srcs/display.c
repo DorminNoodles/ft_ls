@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 21:45:50 by lchety            #+#    #+#             */
-/*   Updated: 2018/04/12 09:40:54 by lchety           ###   ########.fr       */
+/*   Updated: 2018/04/13 14:21:37 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void display(t_dna *dna)
 	t_info	*tmp;
 
 	tmp = dna->dir_lst;
-	tmp = lst_sort_ascii(tmp);
+	// tmp = lst_sort_ascii(tmp);
 
 	while (tmp)
 	{
