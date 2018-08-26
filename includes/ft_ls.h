@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/27 22:37:48 by lchety            #+#    #+#             */
-/*   Updated: 2018/04/13 18:57:33 by lchety           ###   ########.fr       */
+/*   Updated: 2018/08/26 18:36:12 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ typedef struct	s_dna
 	t_info	*dir_lst;
 	t_info	*dir_lst_params;
 	int		options;
-	int
 } t_dna;
 
 
