@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/27 22:37:48 by lchety            #+#    #+#             */
-/*   Updated: 2018/08/27 02:10:13 by lchety           ###   ########.fr       */
+/*   Updated: 2018/08/27 18:58:38 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,5 @@ void 		parsing(t_dna *dna, int argc, char **argv);
 void 		display(t_dna *dna);
 void 		error(char *str);
 void		display_lst_dir(t_dna *dna, t_info *lst);
-void		dir_lst(t_dna *dna, char *path);
+void		create_dir_lst(t_dna *dna, char *path);
 int			isHidden(char *str);

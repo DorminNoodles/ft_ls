@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/27 22:14:06 by lchety            #+#    #+#             */
-/*   Updated: 2018/08/27 01:49:39 by lchety           ###   ########.fr       */
+/*   Updated: 2018/08/27 19:23:33 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 // 	info->next = NULL;
 // }
 
-void add_new_link(t_info **info, t_info *new)
+void	add_new_link(t_info **info, t_info *new)
 {
 	t_info *tmp;
 
@@ -34,7 +34,7 @@ void add_new_link(t_info **info, t_info *new)
 	tmp->next = new;
 }
 
-void open_recursive(t_dna *dna, t_info *info_lst, char *path)
+void	open_recursive(t_dna *dna, t_info *info_lst, char *path)
 {
 	char			*new_path;
 	struct stat		buf;
@@ -62,7 +62,7 @@ void open_recursive(t_dna *dna, t_info *info_lst, char *path)
 	}
 }
 
-void dir_lst(t_dna *dna, char *path)
+void	create_dir_lst(t_dna *dna, char *path)
 {
 	DIR				*dir;
 	t_info			*info_lst;
@@ -121,7 +121,12 @@ int main(int argc, char **argv)
 
 	}
 
-	dir_lst(&dna, ".");
+	//display_files
+
+	while ()
+	{
+		create_dir_lst(&dna, ".");
+	}
 
 	// lst_sort_ascii(&dna);
 	// display(&dna);

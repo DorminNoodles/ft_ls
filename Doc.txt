@@ -1,0 +1,26 @@
+-ls ne prend pas les symbolic link en compte sauf si on lui donne explicitement le nom
+
+-ls -R gere les symbolic link comme des fichiers sauf si ils sont passé explicitement en argument
+
+
+/*
+ * If not -F, -d or -l options, follow any symbolic links listed on
+ * the command line.
+ */
+
+Plan
+
+1 - Parsing
+	- Get all options in argument lst stop at first incorrect option.
+
+	- If word begin like option line with "-" display error
+
+		Error :
+			- Display first bad flag
+
+	- Get all file name in lst
+
+		Error :
+			- If doesn t exit push in error lst display first
+
+2 - 
