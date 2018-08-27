@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/01 15:42:58 by lchety            #+#    #+#             */
-/*   Updated: 2018/04/13 18:59:56 by lchety           ###   ########.fr       */
+/*   Updated: 2018/08/27 02:12:49 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,10 @@ int		check_options(char *str)
 	while (str[i])
 	{
 		if (!ft_strchr(STRING_OPT, str[i]))
-			error("bordel\n");
+		{
+			ft_printf("ls: illegal option -- %c\n", str[i]);
+			error(USAGE);
+		}
 		i++;
 	}
 	return (1);

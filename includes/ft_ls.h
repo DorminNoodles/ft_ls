@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/27 22:37:48 by lchety            #+#    #+#             */
-/*   Updated: 2018/08/26 18:36:12 by lchety           ###   ########.fr       */
+/*   Updated: 2018/08/27 02:10:13 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@
 #define TRI_DATE 16
 
 #define STRING_OPT "-1acdilqrtuCFR"
+
+#define USAGE USAGE_LINE_1 USAGE_LINE_2
+#define USAGE_LINE_1 "usage: ls [-ABCFGHLOPRSTUWabcdefghiklmnopqrstuwx1] "
+#define USAGE_LINE_2 "[file ...]\n"
 
 typedef struct s_info
 {

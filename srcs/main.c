@@ -6,7 +6,7 @@
 /*   By: lchety <lchety@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/27 22:14:06 by lchety            #+#    #+#             */
-/*   Updated: 2018/08/26 18:51:28 by lchety           ###   ########.fr       */
+/*   Updated: 2018/08/27 01:49:39 by lchety           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,9 +109,6 @@ int main(int argc, char **argv)
 	struct	dirent *ret;
 	struct	stat buf;
 	t_dna	dna;
-
-	// printf(">>>>>>>>>>>>> %d\n", ft_strcmp("boite", "Boite"));
-
 
 
 	init_dna(&dna);
